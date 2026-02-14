@@ -11,7 +11,7 @@ A command-line tool that discovers online retailers selling dead stock hair usin
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/DeadStockHair.git
+git clone https://github.com/QuinntyneBrown/DeadStockHair.git
 cd DeadStockHair
 
 # Build the project
@@ -48,7 +48,7 @@ src/
   DeadStockHair.Cli/
     Commands/        # System.CommandLine command definitions
     Models/          # Data models (Retailer record)
-    Services/        # Business logic and Playwright scraping
+    Services/        # Business logic and Playwright scraping (IRetailerScraperService, RetailerScraperService)
     Program.cs       # Host builder and DI setup
 ```
 
@@ -61,4 +61,4 @@ src/
 
 ## License
 
-This project is unlicensed. See [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
