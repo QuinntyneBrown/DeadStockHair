@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: dark,
+      primary: mat.$yellow-palette,
+      secondary: mat.$green-palette,
+    ),
+    typography: (
+      plain-family: 'Inter, sans-serif',
+      brand-family: 'Cormorant Garamond, serif',
+    ),
+    density: (
+      scale: 0,
+    ),
+  ));
+
+  // Override M3 system tokens to match design
+  --mat-sys-surface: #242426;
+  --mat-sys-surface-container: #1A1A1C;
+  --mat-sys-surface-container-low: #1A1A1C;
+  --mat-sys-surface-container-high: #2A2A2C;
+  --mat-sys-surface-container-highest: #2A2A2C;
+  --mat-sys-on-surface: #F5F5F0;
+  --mat-sys-on-surface-variant: #6E6E70;
+  --mat-sys-outline: #3A3A3C;
+  --mat-sys-outline-variant: #2A2A2C;
+  --mat-sys-primary: #C9A962;
+  --mat-sys-on-primary: #1A1A1C;
+  --mat-sys-secondary: #6E9E6E;
+  --mat-sys-on-secondary: #1A1A1C;
+  --mat-sys-surface-variant: #242426;
+  --mat-sys-background: #1A1A1C;
+  --mat-sys-on-background: #F5F5F0;
+}

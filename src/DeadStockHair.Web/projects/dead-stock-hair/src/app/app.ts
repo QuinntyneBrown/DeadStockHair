@@ -1,12 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LayoutService } from './core/services/layout.service';
+import { StatusBarComponent } from './shared/components/status-bar/status-bar';
+import { HeaderComponent } from './features/shell/header/header';
+import { SidebarComponent } from './features/shell/sidebar/sidebar';
+import { TabBarComponent } from './features/shell/tab-bar/tab-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, StatusBarComponent, HeaderComponent, SidebarComponent, TabBarComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('dead-stock-hair');
+  readonly layout = inject(LayoutService);
 }

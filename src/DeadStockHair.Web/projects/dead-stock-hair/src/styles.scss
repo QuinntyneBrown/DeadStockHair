@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@use './theme';
+
+:root {
+  // Design tokens
+  --accent-primary: #C9A962;
+  --accent-secondary: #6E9E6E;
+  --bg-primary: #1A1A1C;
+  --bg-surface: #242426;
+  --bg-elevated: #2A2A2C;
+  --text-primary: #F5F5F0;
+  --text-secondary: #6E6E70;
+  --text-tertiary: #4A4A4C;
+  --border-primary: #3A3A3C;
+  --border-divider: #2A2A2C;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+// Angular Material global overrides
+.mat-mdc-card {
+  --mdc-elevated-card-container-color: var(--bg-surface);
+}
+
+.mat-mdc-form-field {
+  --mdc-outlined-text-field-outline-color: var(--border-primary);
+  --mdc-outlined-text-field-focus-outline-color: var(--accent-primary);
+}

@@ -1,0 +1,83 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+// Desktop shell
+.shell-desktop {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-header {
+  padding: 40px 60px 0;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 40px;
+
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-primary);
+    border-radius: 3px;
+  }
+}
+
+// Mobile/Tablet shell
+.shell-mobile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.mobile-header {
+  padding: 0 28px;
+}
+
+.mobile-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 32px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-primary);
+    border-radius: 2px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-header {
+    padding: 0 48px;
+  }
+  .mobile-content {
+    padding-top: 40px;
+  }
+}
