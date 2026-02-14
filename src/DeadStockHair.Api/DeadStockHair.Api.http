@@ -1,0 +1,25 @@
+@DeadStockHair.Api_HostAddress = http://localhost:5128
+
+### Get all retailers
+GET {{DeadStockHair.Api_HostAddress}}/api/retailers
+Accept: application/json
+
+### Search retailers
+GET {{DeadStockHair.Api_HostAddress}}/api/retailers?search=hair
+Accept: application/json
+
+### Get retailer stats
+GET {{DeadStockHair.Api_HostAddress}}/api/retailers/stats
+Accept: application/json
+
+### Start a scan
+POST {{DeadStockHair.Api_HostAddress}}/api/scan
+Accept: application/json
+
+### Get latest scan
+GET {{DeadStockHair.Api_HostAddress}}/api/scan/latest
+Accept: application/json
+
+### Get saved retailers
+GET {{DeadStockHair.Api_HostAddress}}/api/saved
+Accept: application/json
