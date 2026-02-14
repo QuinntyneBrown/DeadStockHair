@@ -32,9 +32,6 @@ builder.Services.AddHealthChecks()
 // Add services with dependency injection
 builder.Services.AddScoped<IRetailerService, RetailerService>();
 
-// Keep the old RetailerStore for backwards compatibility if needed
-// builder.Services.AddSingleton<RetailerStore>();
-
 builder.Services.AddOpenApi();
 
 builder.Services.AddCors(options =>

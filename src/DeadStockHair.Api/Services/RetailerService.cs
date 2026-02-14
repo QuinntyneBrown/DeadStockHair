@@ -26,8 +26,12 @@ public class RetailerService : IRetailerService
     public async Task<IReadOnlyList<Retailer>> SearchRetailersAsync(string query)
     {
         _logger.LogInformation("Searching retailers with query: {Query}", query);
+        
+        // Escape LIKE special characters in user input
+        var escapedQuery = query.Replace("%", "[%]").Replace("_", "[_]");
+        
         return await _context.Retailers
-            .Where(r => EF.Functions.Like(r.Name, $"%{query}%") || EF.Functions.Like(r.Url, $"%{query}%"))
+            .Where(r => EF.Functions.Like(r.Name, $"%{escapedQuery}%") || EF.Functions.Like(r.Url, $"%{escapedQuery}%"))
             .OrderByDescending(r => r.DiscoveredAt)
             .ToListAsync();
     }
