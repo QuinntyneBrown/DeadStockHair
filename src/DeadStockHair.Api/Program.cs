@@ -8,14 +8,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-// Add database context
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=deadstockhair.db";
+// Add database context with provider selection
+var databaseProvider = builder.Configuration.GetValue<string>("DatabaseProvider") ?? "Sqlite";
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+if (databaseProvider.Equals("SqlServer", StringComparison.OrdinalIgnoreCase))
 {
-    options.UseSqlite(connectionString);
-});
+    connectionString ??= builder.Configuration.GetConnectionString("SqlServerConnection");
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(connectionString));
+}
+else
+{
+    connectionString ??= "Data Source=deadstockhair.db";
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlite(connectionString));
+}
 
 // Add database health check
 builder.Services.AddHealthChecks()
