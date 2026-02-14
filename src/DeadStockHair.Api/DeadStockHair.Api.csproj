@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DeadStockHair.ServiceDefaults\DeadStockHair.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\DeadStockHair.Cli\DeadStockHair.Cli.csproj" />
   </ItemGroup>
 
 </Project>

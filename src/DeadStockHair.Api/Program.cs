@@ -2,6 +2,7 @@ using DeadStockHair.Api.Data;
 using DeadStockHair.Api.Endpoints;
 using DeadStockHair.Api.Extensions;
 using DeadStockHair.Api.Services;
+using DeadStockHair.Cli.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +33,10 @@ builder.Services.AddHealthChecks()
 // Add services with dependency injection
 builder.Services.AddScoped<IRetailerService, RetailerService>();
 
+// Register CLI scraper service and seeding service
+builder.Services.AddSingleton<IRetailerScraperService, RetailerScraperService>();
+builder.Services.AddScoped<SeedingService>();
+
 builder.Services.AddOpenApi();
 
 builder.Services.AddCors(options =>
@@ -46,7 +51,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Initialize database
+// Initialize database (migrate + seed via CLI scraper with static fallback)
 await app.InitializeDatabaseAsync();
 
 app.MapDefaultEndpoints();

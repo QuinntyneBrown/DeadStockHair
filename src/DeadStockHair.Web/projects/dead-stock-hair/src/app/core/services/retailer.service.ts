@@ -1,27 +1,49 @@
-import { Injectable, computed, signal } from '@angular/core';
-import { Retailer } from '../models/retailer.model';
+import { Injectable, inject, signal, computed } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Retailer, RetailerStats, RetailerStatus } from '../models/retailer.model';
+
+const API_BASE = 'http://localhost:5128/api';
 
 @Injectable({ providedIn: 'root' })
 export class RetailerService {
-  private readonly retailers = signal<Retailer[]>([
-    { id: 1, name: 'DROP DEAD Extensions', url: 'dropdeadextensions.com', inStock: true, isNew: false },
-    { id: 2, name: 'Hair Overstock', url: 'hairoverstock.com', inStock: true, isNew: false },
-    { id: 3, name: 'Viola Hair Extensions', url: 'violahairextensions.co', inStock: true, isNew: true },
-    { id: 4, name: 'PureHair Canada', url: 'purehair.ca', inStock: true, isNew: false },
-    { id: 5, name: 'Export Hair Africa', url: 'exporthairafrica.com', inStock: false, isNew: false },
-    { id: 6, name: 'Golden Lush Extensions', url: 'goldenlushextensions.com', inStock: true, isNew: true },
-    { id: 7, name: 'Bombay Hair', url: 'bombayhair.com', inStock: false, isNew: false },
-    { id: 8, name: 'Modiva Hair', url: 'modivahair.com', inStock: true, isNew: true },
-    { id: 9, name: 'Chiquel Hair', url: 'chiquel.ca', inStock: false, isNew: false },
-    { id: 10, name: 'Chiquel Hair', url: 'chiquelhair.com', inStock: false, isNew: false },
-  ]);
+  private readonly http = inject(HttpClient);
+
+  private readonly retailers = signal<Retailer[]>([]);
+  private readonly stats = signal<RetailerStats>({ totalRetailers: 0, inStock: 0, newThisWeek: 0 });
+  private readonly loading = signal(true);
 
   readonly allRetailers = this.retailers.asReadonly();
+  readonly isLoading = this.loading.asReadonly();
 
-  readonly totalCount = computed(() => this.retailers().length);
-  readonly inStockCount = computed(() => this.retailers().filter(r => r.inStock).length);
-  readonly newThisWeek = computed(() => this.retailers().filter(r => r.isNew).length);
+  readonly totalCount = computed(() => this.stats().totalRetailers);
+  readonly inStockCount = computed(() => this.stats().inStock);
+  readonly newThisWeek = computed(() => this.stats().newThisWeek);
   readonly lastScannedHours = signal(24);
+
+  constructor() {
+    this.loadRetailers();
+    this.loadStats();
+  }
+
+  private loadRetailers(): void {
+    this.http.get<Retailer[]>(`${API_BASE}/retailers`).subscribe({
+      next: (data) => {
+        this.retailers.set(data);
+        this.loading.set(false);
+      },
+      error: (err) => {
+        console.error('Failed to load retailers:', err);
+        this.loading.set(false);
+      },
+    });
+  }
+
+  private loadStats(): void {
+    this.http.get<RetailerStats>(`${API_BASE}/retailers/stats`).subscribe({
+      next: (data) => this.stats.set(data),
+      error: (err) => console.error('Failed to load stats:', err),
+    });
+  }
 
   filteredRetailers(query: string): Retailer[] {
     const q = query.toLowerCase();
