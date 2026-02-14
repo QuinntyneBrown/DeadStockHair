@@ -27,7 +27,7 @@ public class RetailerService : IRetailerService
     {
         _logger.LogInformation("Searching retailers with query: {Query}", query);
         return await _context.Retailers
-            .Where(r => r.Name.Contains(query) || r.Url.Contains(query))
+            .Where(r => EF.Functions.Like(r.Name, $"%{query}%") || EF.Functions.Like(r.Url, $"%{query}%"))
             .OrderByDescending(r => r.DiscoveredAt)
             .ToListAsync();
     }
@@ -66,13 +66,17 @@ public class RetailerService : IRetailerService
     public async Task<RetailerStats> GetStatsAsync()
     {
         _logger.LogInformation("Calculating retailer statistics");
-        var all = await _context.Retailers.ToListAsync();
+        
         var oneWeekAgo = DateTime.UtcNow.AddDays(-7);
         
+        var totalRetailers = await _context.Retailers.CountAsync();
+        var inStock = await _context.Retailers.CountAsync(r => r.Status == RetailerStatus.InStock);
+        var newThisWeek = await _context.Retailers.CountAsync(r => r.DiscoveredAt >= oneWeekAgo);
+        
         var stats = new RetailerStats(
-            TotalRetailers: all.Count,
-            InStock: all.Count(r => r.Status == RetailerStatus.InStock),
-            NewThisWeek: all.Count(r => r.DiscoveredAt >= oneWeekAgo)
+            TotalRetailers: totalRetailers,
+            InStock: inStock,
+            NewThisWeek: newThisWeek
         );
         
         _logger.LogInformation("Retailer statistics calculated: {TotalRetailers} total, {InStock} in stock, {NewThisWeek} new this week", 
@@ -83,12 +87,9 @@ public class RetailerService : IRetailerService
     public async Task<IReadOnlyList<Retailer>> GetSavedRetailersAsync()
     {
         _logger.LogInformation("Retrieving saved retailers");
-        var savedIds = await _context.SavedRetailers
-            .Select(s => s.RetailerId)
-            .ToListAsync();
-
+        
         return await _context.Retailers
-            .Where(r => savedIds.Contains(r.Id))
+            .Where(r => _context.SavedRetailers.Any(s => s.RetailerId == r.Id))
             .OrderByDescending(r => r.DiscoveredAt)
             .ToListAsync();
     }
