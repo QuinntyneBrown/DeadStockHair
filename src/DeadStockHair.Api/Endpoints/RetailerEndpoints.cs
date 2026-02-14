@@ -1,5 +1,5 @@
-using DeadStockHair.Api.Data;
 using DeadStockHair.Api.Models;
+using DeadStockHair.Api.Services;
 
 namespace DeadStockHair.Api.Endpoints;
 
@@ -9,33 +9,33 @@ public static class RetailerEndpoints
     {
         var group = app.MapGroup("/api/retailers").WithTags("Retailers");
 
-        group.MapGet("/", (RetailerStore store, string? search) =>
+        group.MapGet("/", async (IRetailerService service, string? search) =>
         {
             var retailers = string.IsNullOrWhiteSpace(search)
-                ? store.GetAllRetailers()
-                : store.SearchRetailers(search);
+                ? await service.GetAllRetailersAsync()
+                : await service.SearchRetailersAsync(search);
 
             return Results.Ok(retailers);
         })
         .WithName("GetRetailers")
         .WithSummary("Get all retailers, optionally filtered by search query");
 
-        group.MapGet("/stats", (RetailerStore store) =>
+        group.MapGet("/stats", async (IRetailerService service) =>
         {
-            return Results.Ok(store.GetStats());
+            return Results.Ok(await service.GetStatsAsync());
         })
         .WithName("GetRetailerStats")
         .WithSummary("Get retailer statistics");
 
-        group.MapGet("/{id:guid}", (Guid id, RetailerStore store) =>
+        group.MapGet("/{id:guid}", async (Guid id, IRetailerService service) =>
         {
-            var retailer = store.GetRetailer(id);
+            var retailer = await service.GetRetailerAsync(id);
             return retailer is not null ? Results.Ok(retailer) : Results.NotFound();
         })
         .WithName("GetRetailerById")
         .WithSummary("Get a retailer by ID");
 
-        group.MapPost("/", (CreateRetailerRequest request, RetailerStore store) =>
+        group.MapPost("/", async (CreateRetailerRequest request, IRetailerService service) =>
         {
             var retailer = new Retailer
             {
@@ -44,15 +44,15 @@ public static class RetailerEndpoints
                 Status = request.Status ?? RetailerStatus.Unknown
             };
 
-            store.AddRetailer(retailer);
+            await service.AddRetailerAsync(retailer);
             return Results.Created($"/api/retailers/{retailer.Id}", retailer);
         })
         .WithName("CreateRetailer")
         .WithSummary("Add a new retailer");
 
-        group.MapDelete("/{id:guid}", (Guid id, RetailerStore store) =>
+        group.MapDelete("/{id:guid}", async (Guid id, IRetailerService service) =>
         {
-            return store.DeleteRetailer(id) ? Results.NoContent() : Results.NotFound();
+            return await service.DeleteRetailerAsync(id) ? Results.NoContent() : Results.NotFound();
         })
         .WithName("DeleteRetailer")
         .WithSummary("Delete a retailer");

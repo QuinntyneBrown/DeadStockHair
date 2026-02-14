@@ -1,5 +1,5 @@
-using DeadStockHair.Api.Data;
 using DeadStockHair.Api.Models;
+using DeadStockHair.Api.Services;
 
 namespace DeadStockHair.Api.Endpoints;
 
@@ -9,27 +9,35 @@ public static class ScanEndpoints
     {
         var group = app.MapGroup("/api/scan").WithTags("Scan");
 
-        group.MapPost("/", (RetailerStore store) =>
+        group.MapPost("/", async (IRetailerService service, ILogger<Program> logger) =>
         {
-            var scan = store.CreateScan();
+            var scan = await service.CreateScanAsync();
 
             // Simulate async scan completion in the background
             _ = Task.Run(async () =>
             {
-                await Task.Delay(3000);
-
-                var newRetailers = new[]
+                try
                 {
-                    new Retailer { Name = "Belle Hair Studio", Url = "bellehair.com", Status = RetailerStatus.InStock },
-                    new Retailer { Name = "Strand Supply Co", Url = "strandsupply.com", Status = RetailerStatus.Unknown },
-                };
+                    await Task.Delay(3000);
 
-                foreach (var retailer in newRetailers)
-                {
-                    store.AddRetailer(retailer);
+                    var newRetailers = new[]
+                    {
+                        new Retailer { Name = "Belle Hair Studio", Url = "bellehair.com", Status = RetailerStatus.InStock },
+                        new Retailer { Name = "Strand Supply Co", Url = "strandsupply.com", Status = RetailerStatus.Unknown },
+                    };
+
+                    foreach (var retailer in newRetailers)
+                    {
+                        await service.AddRetailerAsync(retailer);
+                    }
+
+                    await service.CompleteScanAsync(scan.Id, newRetailers.Length);
                 }
-
-                store.CompleteScan(scan.Id, newRetailers.Length);
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Error completing scan {ScanId}", scan.Id);
+                    await service.FailScanAsync(scan.Id);
+                }
             });
 
             return Results.Accepted($"/api/scan/{scan.Id}", scan);
@@ -37,17 +45,17 @@ public static class ScanEndpoints
         .WithName("StartScan")
         .WithSummary("Trigger a new retailer scan");
 
-        group.MapGet("/{id:guid}", (Guid id, RetailerStore store) =>
+        group.MapGet("/{id:guid}", async (Guid id, IRetailerService service) =>
         {
-            var scan = store.GetScan(id);
+            var scan = await service.GetScanAsync(id);
             return scan is not null ? Results.Ok(scan) : Results.NotFound();
         })
         .WithName("GetScanStatus")
         .WithSummary("Get the status of a scan");
 
-        group.MapGet("/latest", (RetailerStore store) =>
+        group.MapGet("/latest", async (IRetailerService service) =>
         {
-            var scan = store.GetLatestScan();
+            var scan = await service.GetLatestScanAsync();
             return scan is not null ? Results.Ok(scan) : Results.NotFound();
         })
         .WithName("GetLatestScan")

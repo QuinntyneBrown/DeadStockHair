@@ -1,4 +1,4 @@
-using DeadStockHair.Api.Data;
+using DeadStockHair.Api.Services;
 
 namespace DeadStockHair.Api.Endpoints;
 
@@ -8,16 +8,16 @@ public static class SavedEndpoints
     {
         var group = app.MapGroup("/api/saved").WithTags("Saved");
 
-        group.MapGet("/", (RetailerStore store) =>
+        group.MapGet("/", async (IRetailerService service) =>
         {
-            return Results.Ok(store.GetSavedRetailers());
+            return Results.Ok(await service.GetSavedRetailersAsync());
         })
         .WithName("GetSavedRetailers")
         .WithSummary("Get all saved/bookmarked retailers");
 
-        group.MapPost("/{retailerId:guid}", (Guid retailerId, RetailerStore store) =>
+        group.MapPost("/{retailerId:guid}", async (Guid retailerId, IRetailerService service) =>
         {
-            var saved = store.SaveRetailer(retailerId);
+            var saved = await service.SaveRetailerAsync(retailerId);
             return saved is not null
                 ? Results.Ok(saved)
                 : Results.NotFound(new { message = "Retailer not found" });
@@ -25,16 +25,16 @@ public static class SavedEndpoints
         .WithName("SaveRetailer")
         .WithSummary("Save/bookmark a retailer");
 
-        group.MapDelete("/{retailerId:guid}", (Guid retailerId, RetailerStore store) =>
+        group.MapDelete("/{retailerId:guid}", async (Guid retailerId, IRetailerService service) =>
         {
-            return store.UnsaveRetailer(retailerId) ? Results.NoContent() : Results.NotFound();
+            return await service.UnsaveRetailerAsync(retailerId) ? Results.NoContent() : Results.NotFound();
         })
         .WithName("UnsaveRetailer")
         .WithSummary("Remove a saved retailer");
 
-        group.MapGet("/{retailerId:guid}/status", (Guid retailerId, RetailerStore store) =>
+        group.MapGet("/{retailerId:guid}/status", async (Guid retailerId, IRetailerService service) =>
         {
-            return Results.Ok(new { isSaved = store.IsRetailerSaved(retailerId) });
+            return Results.Ok(new { isSaved = await service.IsRetailerSavedAsync(retailerId) });
         })
         .WithName("GetSavedStatus")
         .WithSummary("Check if a retailer is saved");
