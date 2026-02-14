@@ -1,0 +1,2843 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "TrCMm",
+      "x": 500,
+      "y": 0,
+      "name": "Component/RetailerCard",
+      "reusable": true,
+      "width": 346,
+      "fill": "$bg-surface",
+      "cornerRadius": 20,
+      "gap": 16,
+      "padding": [
+        20,
+        24
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "4Dp1w",
+          "name": "Icon",
+          "width": 44,
+          "height": 44,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 135,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "$accent-primary",
+                "position": 0
+              },
+              {
+                "color": "#8B7845",
+                "position": 1
+              }
+            ]
+          },
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "QhLOg",
+              "name": "iconText",
+              "width": 22,
+              "height": 22,
+              "iconFontName": "store",
+              "iconFontFamily": "lucide",
+              "fill": "#1A1A1C"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jnuyn",
+          "name": "Content",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 4,
+          "children": [
+            {
+              "type": "text",
+              "id": "7Mjfo",
+              "name": "Name",
+              "fill": "$text-primary",
+              "content": "Retailer Name",
+              "fontFamily": "Cormorant Garamond",
+              "fontSize": 18,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "xKDwA",
+              "name": "Url",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "retailer.com",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "icon_font",
+          "id": "Hv1qQ",
+          "name": "Chevron",
+          "width": 18,
+          "height": 18,
+          "iconFontName": "external-link",
+          "iconFontFamily": "lucide",
+          "fill": "$text-tertiary"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "cLvou",
+      "x": 0,
+      "y": 0,
+      "name": "Mobile - Retailer List",
+      "clip": true,
+      "width": 402,
+      "fill": "$bg-primary",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "0mv0M",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 54,
+          "padding": [
+            14,
+            24
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "MeIGl",
+              "name": "timeText",
+              "fill": "$text-primary",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "wbhzq",
+              "name": "iconsRow",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "xBwVU",
+                  "name": "sigIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "signal",
+                  "iconFontFamily": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "qnxg4",
+                  "name": "wifiIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "wifi",
+                  "iconFontFamily": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "frame",
+                  "id": "w2N8W",
+                  "name": "batFrame",
+                  "width": 27,
+                  "height": 13,
+                  "cornerRadius": 3,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$text-primary"
+                  },
+                  "padding": 2,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 1,
+                      "id": "EqB9j",
+                      "name": "batFill",
+                      "fill": "$text-primary",
+                      "width": 16,
+                      "height": "fill_container"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yuZYi",
+          "name": "Content",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            0,
+            28,
+            28,
+            28
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "Bj06P",
+              "name": "Header",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gl6Y3",
+                  "name": "Header Left",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vvWMu",
+                      "name": "brandText",
+                      "fill": "$text-primary",
+                      "content": "DeadStock",
+                      "lineHeight": 1,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 36,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "buPp9",
+                      "name": "subtitleText",
+                      "fill": "$accent-primary",
+                      "content": "Hair Retailers",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2jtzL",
+                  "name": "Notification",
+                  "width": 44,
+                  "height": 44,
+                  "cornerRadius": 22,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$border-primary"
+                  },
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "6TAfu",
+                      "name": "notifIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "bell",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-primary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "q0p17",
+              "name": "Search Bar",
+              "width": "fill_container",
+              "height": 52,
+              "cornerRadius": 26,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$border-primary"
+              },
+              "gap": 14,
+              "padding": [
+                0,
+                20
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "EBnjd",
+                  "name": "searchIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "search",
+                  "iconFontFamily": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "jh1j4",
+                  "name": "searchText",
+                  "fill": "$text-secondary",
+                  "content": "Search retailers...",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qXf4L",
+              "name": "Stats Row",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "EafQ7",
+                  "name": "Stat Card",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bBIvG",
+                      "name": "stat1Val",
+                      "fill": "$text-primary",
+                      "content": "10",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 48,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "GZk4O",
+                      "name": "stat1Label",
+                      "fill": "$text-secondary",
+                      "content": "Retailers",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nsgb0",
+                  "name": "Stat Card",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AyOgV",
+                      "name": "stat2Val",
+                      "fill": "$accent-primary",
+                      "content": "6",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 48,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "y84pl",
+                      "name": "stat2Label",
+                      "fill": "$text-secondary",
+                      "content": "In Stock",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Wj5zU",
+                      "name": "stat2Badge",
+                      "fill": "#C9A96220",
+                      "cornerRadius": 20,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fkNaP",
+                          "name": "stat2BadgeText",
+                          "fill": "$accent-primary",
+                          "content": "Live",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GYhTy",
+              "name": "Retailer List Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CuI8a",
+                  "name": "Section Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EMYgd",
+                      "name": "listLabel",
+                      "fill": "$text-secondary",
+                      "content": "RETAILERS",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1yuc7",
+                      "name": "listAction",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$accent-primary"
+                      },
+                      "gap": 6,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "1fKlG",
+                          "name": "scanIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "refresh-cw",
+                          "iconFontFamily": "lucide",
+                          "fill": "$accent-primary"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WKlM3",
+                          "name": "scanText",
+                          "fill": "$accent-primary",
+                          "content": "Scan",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8MPl6",
+                  "name": "Card List",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "DuvcN",
+                      "name": "Retailer Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "VOlgp",
+                          "name": "r1icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": {
+                            "type": "gradient",
+                            "gradientType": "linear",
+                            "enabled": true,
+                            "rotation": 135,
+                            "size": {
+                              "height": 1
+                            },
+                            "colors": [
+                              {
+                                "color": "$accent-primary",
+                                "position": 0
+                              },
+                              {
+                                "color": "#8B7845",
+                                "position": 1
+                              }
+                            ]
+                          },
+                          "cornerRadius": 12,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "StDw7",
+                              "name": "r1iconI",
+                              "width": 22,
+                              "height": 22,
+                              "iconFontName": "store",
+                              "iconFontFamily": "lucide",
+                              "fill": "#1A1A1C"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ffxon",
+                          "name": "r1content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "9ugBj",
+                              "name": "r1name",
+                              "fill": "$text-primary",
+                              "content": "DROP DEAD Extensions",
+                              "fontFamily": "Cormorant Garamond",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "sblrw",
+                              "name": "r1url",
+                              "fill": "$text-secondary",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "dropdeadextensions.com",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "igXDv",
+                          "name": "r1chev",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "external-link",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "9dWQ5",
+                      "name": "Divider",
+                      "fill": "$border-divider",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "eAmGp",
+                      "name": "Retailer Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "esafs",
+                          "name": "r2icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "$bg-elevated",
+                          "cornerRadius": 12,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "XiATZ",
+                              "name": "r2iconI",
+                              "width": 22,
+                              "height": 22,
+                              "iconFontName": "shopping-bag",
+                              "iconFontFamily": "lucide",
+                              "fill": "$accent-primary"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WVh4V",
+                          "name": "r2content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "snj10",
+                              "name": "r2name",
+                              "fill": "$text-primary",
+                              "content": "Hair Overstock",
+                              "fontFamily": "Cormorant Garamond",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "4inlE",
+                              "name": "r2url",
+                              "fill": "$text-secondary",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "hairoverstock.com",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "6f3Rg",
+                          "name": "r2chev",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "external-link",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "krqt1",
+                      "name": "Divider",
+                      "fill": "$border-divider",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xE76f",
+                      "name": "Retailer Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "v4NRt",
+                          "name": "r3icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "$bg-elevated",
+                          "cornerRadius": 12,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "vy252",
+                              "name": "r3iconI",
+                              "width": 22,
+                              "height": 22,
+                              "iconFontName": "scissors",
+                              "iconFontFamily": "lucide",
+                              "fill": "$accent-secondary"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "0gpHw",
+                          "name": "r3content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "LVa4D",
+                              "name": "r3name",
+                              "fill": "$text-primary",
+                              "content": "Viola Hair Extensions",
+                              "fontFamily": "Cormorant Garamond",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "VrofF",
+                              "name": "r3url",
+                              "fill": "$text-secondary",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "violahairextensions.co",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "7j21b",
+                          "name": "r3chev",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "external-link",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "wqMDs",
+                      "name": "Divider",
+                      "fill": "$border-divider",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4q2eS",
+                      "name": "Retailer Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "hUt27",
+                          "name": "r4icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "$bg-elevated",
+                          "cornerRadius": 12,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "ScBUh",
+                              "name": "r4iconI",
+                              "width": 22,
+                              "height": 22,
+                              "iconFontName": "package",
+                              "iconFontFamily": "lucide",
+                              "fill": "$accent-primary"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "6XaP5",
+                          "name": "r4content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "GV9Xa",
+                              "name": "r4name",
+                              "fill": "$text-primary",
+                              "content": "ParaHair Canada",
+                              "fontFamily": "Cormorant Garamond",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "OmuJs",
+                              "name": "r4url",
+                              "fill": "$text-secondary",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "parahair.ca",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "02ORF",
+                          "name": "r4chev",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "external-link",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "QQrQQ",
+                      "name": "Divider",
+                      "fill": "$border-divider",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pVxT5",
+                      "name": "Retailer Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "cZeLe",
+                          "name": "r5icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "$bg-elevated",
+                          "cornerRadius": 12,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "8yyHE",
+                              "name": "r5iconI",
+                              "width": 22,
+                              "height": 22,
+                              "iconFontName": "crown",
+                              "iconFontFamily": "lucide",
+                              "fill": "$accent-secondary"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BZgQl",
+                          "name": "r5content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Ujl8k",
+                              "name": "r5name",
+                              "fill": "$text-primary",
+                              "content": "Golden Lush Extensions",
+                              "fontFamily": "Cormorant Garamond",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "8VRh0",
+                              "name": "r5url",
+                              "fill": "$text-secondary",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "goldenlushextensions.com",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "qooNX",
+                          "name": "r5chev",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "external-link",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "4IJTa",
+          "name": "Tab Bar Section",
+          "width": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#1A1A1C00",
+                "position": 0
+              },
+              {
+                "color": "#1A1A1C",
+                "position": 0.3
+              }
+            ]
+          },
+          "layout": "vertical",
+          "padding": [
+            16,
+            21,
+            24,
+            21
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "qL8AC",
+              "name": "Tab Bar Pill",
+              "width": "fill_container",
+              "height": 62,
+              "fill": "$bg-surface",
+              "cornerRadius": 34,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$border-primary"
+              },
+              "padding": 4,
+              "justifyContent": "space_around",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bMmGn",
+                  "name": "tab1",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "5TydD",
+                      "name": "tab1Icon",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "house",
+                      "iconFontFamily": "lucide",
+                      "fill": "$accent-primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "u5xoy",
+                      "name": "tab1Label",
+                      "fill": "$accent-primary",
+                      "content": "Home",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tjYrd",
+                  "name": "tab2",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "evCwH",
+                      "name": "tab2Icon",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "search",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "1SeFr",
+                      "name": "tab2Label",
+                      "fill": "$text-secondary",
+                      "content": "Scan",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "7J0Kj",
+                  "name": "tab3",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "G74fU",
+                      "name": "tab3Icon",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "bookmark",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "S2bjE",
+                      "name": "tab3Label",
+                      "fill": "$text-secondary",
+                      "content": "Saved",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bzgQv",
+                  "name": "tab4",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "hTBPI",
+                      "name": "tab4Icon",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "settings",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AhpJT",
+                      "name": "tab4Label",
+                      "fill": "$text-secondary",
+                      "content": "Settings",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "QZ0ki",
+      "x": 0,
+      "y": 1150,
+      "name": "Tablet - Retailer List",
+      "clip": true,
+      "width": 768,
+      "fill": "$bg-primary",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "aoPhs",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 54,
+          "padding": [
+            14,
+            32
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "IAbvT",
+              "name": "tTime",
+              "fill": "$text-primary",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "csne2",
+              "name": "tIcons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "0Yl1G",
+                  "name": "tSig",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "signal",
+                  "iconFontFamily": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "QgXF9",
+                  "name": "tWifi",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "wifi",
+                  "iconFontFamily": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "frame",
+                  "id": "yg3YT",
+                  "name": "tBat",
+                  "width": 27,
+                  "height": 13,
+                  "cornerRadius": 3,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$text-primary"
+                  },
+                  "padding": 2,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 1,
+                      "id": "GQtfN",
+                      "name": "tBatFill",
+                      "fill": "$text-primary",
+                      "width": 16,
+                      "height": "fill_container"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Wq3Yy",
+          "name": "Content",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            0,
+            48,
+            48,
+            48
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "CmR4L",
+              "name": "Header",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vzYk0",
+                  "name": "tHeaderLeft",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RVMzC",
+                      "name": "tBrand",
+                      "fill": "$text-primary",
+                      "content": "DeadStock",
+                      "lineHeight": 1,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 42,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ydPgi",
+                      "name": "tSubtitle",
+                      "fill": "$accent-primary",
+                      "content": "Hair Retailers",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500",
+                      "letterSpacing": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6cCZR",
+                  "name": "tNotif",
+                  "width": 44,
+                  "height": 44,
+                  "cornerRadius": 22,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$border-primary"
+                  },
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "mbukK",
+                      "name": "tNotifIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "bell",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-primary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "S6R1R",
+              "name": "Search Bar",
+              "width": "fill_container",
+              "height": 52,
+              "cornerRadius": 26,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$border-primary"
+              },
+              "gap": 14,
+              "padding": [
+                0,
+                20
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "7GXSH",
+                  "name": "tSearchIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "search",
+                  "iconFontFamily": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "Jh8Pv",
+                  "name": "tSearchText",
+                  "fill": "$text-secondary",
+                  "content": "Search retailers...",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "2WJQ5",
+              "name": "Stats Row",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "AvujW",
+                  "name": "tS1",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OVlyh",
+                      "name": "tS1Val",
+                      "fill": "$text-primary",
+                      "content": "10",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 48,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RTQNG",
+                      "name": "tS1Label",
+                      "fill": "$text-secondary",
+                      "content": "Retailers Found",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "AFL4L",
+                  "name": "tS2",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dmisE",
+                      "name": "tS2Val",
+                      "fill": "$accent-primary",
+                      "content": "6",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 48,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RyEEB",
+                      "name": "tS2Label",
+                      "fill": "$text-secondary",
+                      "content": "In Stock",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "v7yNk",
+                      "name": "tS2Badge",
+                      "fill": "#C9A96220",
+                      "cornerRadius": 20,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "udzHv",
+                          "name": "tS2BadgeT",
+                          "fill": "$accent-primary",
+                          "content": "Live",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "KjmVA",
+                  "name": "tS3",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "sulfH",
+                      "name": "tS3Val",
+                      "fill": "$accent-secondary",
+                      "content": "3",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 48,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "gayqs",
+                      "name": "tS3Label",
+                      "fill": "$text-secondary",
+                      "content": "New This Week",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KYKMk",
+              "name": "Retailer List Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "k7aIu",
+                  "name": "Section Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "K1HdD",
+                      "name": "tListLabel",
+                      "fill": "$text-secondary",
+                      "content": "RETAILERS",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LcBrC",
+                      "name": "tScanBtn",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$accent-primary"
+                      },
+                      "gap": 6,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "BbzQ7",
+                          "name": "tScanIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "refresh-cw",
+                          "iconFontFamily": "lucide",
+                          "fill": "$accent-primary"
+                        },
+                        {
+                          "type": "text",
+                          "id": "emEsz",
+                          "name": "tScanText",
+                          "fill": "$accent-primary",
+                          "content": "Scan",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Pje7t",
+                  "name": "Card Grid",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QQpcg",
+                      "name": "Column 1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "id": "glJfk",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "tc1",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": {
+                                "type": "gradient",
+                                "gradientType": "linear",
+                                "enabled": true,
+                                "rotation": 135,
+                                "size": {
+                                  "height": 1
+                                },
+                                "colors": [
+                                  {
+                                    "color": "$accent-primary",
+                                    "position": 0
+                                  },
+                                  {
+                                    "color": "#8B7845",
+                                    "position": 1
+                                  }
+                                ]
+                              }
+                            },
+                            "7Mjfo": {
+                              "content": "DROP DEAD Extensions"
+                            },
+                            "xKDwA": {
+                              "content": "dropdeadextensions.com"
+                            }
+                          }
+                        },
+                        {
+                          "id": "03NKl",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "tc2",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "scissors",
+                              "fill": "$accent-secondary"
+                            },
+                            "7Mjfo": {
+                              "content": "Viola Hair Extensions"
+                            },
+                            "xKDwA": {
+                              "content": "violahairextensions.co"
+                            }
+                          }
+                        },
+                        {
+                          "id": "tB7U4",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "tc3",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "sparkles",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "Chiquel Hair"
+                            },
+                            "xKDwA": {
+                              "content": "chiquel.ca"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "bLS4O",
+                      "name": "Column 2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "id": "iAyyp",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "tc4",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "shopping-bag",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "Hair Overstock"
+                            },
+                            "xKDwA": {
+                              "content": "hairoverstock.com"
+                            }
+                          }
+                        },
+                        {
+                          "id": "p8NUc",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "tc5",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "package",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "ParaHair Canada"
+                            },
+                            "xKDwA": {
+                              "content": "parahair.ca"
+                            }
+                          }
+                        },
+                        {
+                          "id": "NExZn",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "tc6",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "crown",
+                              "fill": "$accent-secondary"
+                            },
+                            "7Mjfo": {
+                              "content": "Golden Lush Extensions"
+                            },
+                            "xKDwA": {
+                              "content": "goldenlushextensions.com"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "INDVC",
+          "name": "Tab Bar Section",
+          "width": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#1A1A1C00",
+                "position": 0
+              },
+              {
+                "color": "#1A1A1C",
+                "position": 0.3
+              }
+            ]
+          },
+          "layout": "vertical",
+          "padding": [
+            16,
+            48,
+            24,
+            48
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "E3LvP",
+              "name": "Tab Bar Pill",
+              "width": "fill_container",
+              "height": 62,
+              "fill": "$bg-surface",
+              "cornerRadius": 34,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$border-primary"
+              },
+              "padding": 4,
+              "justifyContent": "space_around",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fUpui",
+                  "name": "tt1",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "oLzyb",
+                      "name": "tt1i",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "house",
+                      "iconFontFamily": "lucide",
+                      "fill": "$accent-primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "17hKY",
+                      "name": "tt1l",
+                      "fill": "$accent-primary",
+                      "content": "Home",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "R5FEx",
+                  "name": "tt2",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Op0g6",
+                      "name": "tt2i",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "search",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "8UbOQ",
+                      "name": "tt2l",
+                      "fill": "$text-secondary",
+                      "content": "Scan",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pYQdy",
+                  "name": "tt3",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Uf1W3",
+                      "name": "tt3i",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "bookmark",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qgyhe",
+                      "name": "tt3l",
+                      "fill": "$text-secondary",
+                      "content": "Saved",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8y3Yb",
+                  "name": "tt4",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "KlNT2",
+                      "name": "tt4i",
+                      "width": 22,
+                      "height": 22,
+                      "iconFontName": "settings",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "QetE4",
+                      "name": "tt4l",
+                      "fill": "$text-secondary",
+                      "content": "Settings",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "NZ3PB",
+      "x": 0,
+      "y": 2350,
+      "name": "Desktop - Retailer List",
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg-primary",
+      "children": [
+        {
+          "type": "frame",
+          "id": "cnwhs",
+          "name": "Sidebar",
+          "width": 260,
+          "height": "fill_container",
+          "fill": "$bg-surface",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "right": 1
+            },
+            "fill": "$border-divider"
+          },
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            40,
+            28
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "gduRP",
+              "name": "sLogo",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ODszE",
+                  "name": "sLogoText",
+                  "fill": "$text-primary",
+                  "content": "DeadStock",
+                  "lineHeight": 1,
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 32,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "R2MTD",
+                  "name": "sLogoSub",
+                  "fill": "$accent-primary",
+                  "content": "Hair Retailers",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 3
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wxhvT",
+              "name": "Navigation",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "D1TRh",
+                  "name": "sNavLabel",
+                  "fill": "$text-tertiary",
+                  "content": "MENU",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "500",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "frame",
+                  "id": "zWKZ0",
+                  "name": "sNavSpacer",
+                  "width": "fill_container",
+                  "height": 12
+                },
+                {
+                  "type": "frame",
+                  "id": "3Db6Y",
+                  "name": "sNav1",
+                  "width": "fill_container",
+                  "fill": "#C9A96215",
+                  "cornerRadius": 16,
+                  "gap": 14,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "F3sOb",
+                      "name": "sNav1i",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "house",
+                      "iconFontFamily": "lucide",
+                      "fill": "$accent-primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "A4UtA",
+                      "name": "sNav1l",
+                      "fill": "$accent-primary",
+                      "content": "Home",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4DvHg",
+                  "name": "sNav2",
+                  "width": "fill_container",
+                  "cornerRadius": 16,
+                  "gap": 14,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "3EJwE",
+                      "name": "sNav2i",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "search",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "WRukh",
+                      "name": "sNav2l",
+                      "fill": "$text-secondary",
+                      "content": "Scan",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "9Nl6d",
+                  "name": "sNav3",
+                  "width": "fill_container",
+                  "cornerRadius": 16,
+                  "gap": 14,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "yzHk6",
+                      "name": "sNav3i",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "bookmark",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "SUm2U",
+                      "name": "sNav3l",
+                      "fill": "$text-secondary",
+                      "content": "Saved",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b21rM",
+                  "name": "sNav4",
+                  "width": "fill_container",
+                  "cornerRadius": 16,
+                  "gap": 14,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "0Sbpt",
+                      "name": "sNav4i",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "settings",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZLshg",
+                      "name": "sNav4l",
+                      "fill": "$text-secondary",
+                      "content": "Settings",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "doznz",
+          "name": "Main Content",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            40,
+            60
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "QRjLX",
+              "name": "Header",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "THX2X",
+                  "name": "dHeaderLeft",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lN9bO",
+                      "name": "dTitle",
+                      "fill": "$text-primary",
+                      "content": "Retailer Directory",
+                      "lineHeight": 1,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 36,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UB54X",
+                      "name": "dSubtitle",
+                      "fill": "$text-secondary",
+                      "content": "Discover online retailers selling dead stock hair",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cbPxs",
+                  "name": "dHeaderRight",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ezUfB",
+                      "name": "Search Bar",
+                      "width": 320,
+                      "height": 48,
+                      "cornerRadius": 24,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-primary"
+                      },
+                      "gap": 14,
+                      "padding": [
+                        0,
+                        20
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "lXnrg",
+                          "name": "dSearchIcon",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "search",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-secondary"
+                        },
+                        {
+                          "type": "text",
+                          "id": "KKzgt",
+                          "name": "dSearchText",
+                          "fill": "$text-secondary",
+                          "content": "Search retailers...",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "g1jWO",
+                      "name": "dNotif",
+                      "width": 48,
+                      "height": 48,
+                      "cornerRadius": 24,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-primary"
+                      },
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "ovgM8",
+                          "name": "dNotifIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "bell",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-primary"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dU8QL",
+              "name": "Stats Row",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "9oIvh",
+                  "name": "dS1",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    24,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "i623p",
+                      "name": "dS1Val",
+                      "fill": "$text-primary",
+                      "content": "10",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 52,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pwIVw",
+                      "name": "dS1Label",
+                      "fill": "$text-secondary",
+                      "content": "Retailers Found",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "p8Q6n",
+                  "name": "dS2",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    24,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4YayF",
+                      "name": "dS2Val",
+                      "fill": "$accent-primary",
+                      "content": "6",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 52,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rnzvS",
+                      "name": "dS2Row",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1Pf8Q",
+                          "name": "dS2Label",
+                          "fill": "$text-secondary",
+                          "content": "In Stock",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WuXvk",
+                          "name": "dS2Badge",
+                          "fill": "#C9A96220",
+                          "cornerRadius": 20,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "cinEn",
+                              "name": "dS2BadgeT",
+                              "fill": "$accent-primary",
+                              "content": "Live",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gi32d",
+                  "name": "dS3",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    24,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "xwnlV",
+                      "name": "dS3Val",
+                      "fill": "$accent-secondary",
+                      "content": "3",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 52,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "DZNAB",
+                      "name": "dS3Label",
+                      "fill": "$text-secondary",
+                      "content": "New This Week",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DOVdC",
+                  "name": "dS4",
+                  "width": "fill_container",
+                  "fill": "$bg-surface",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    24,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ioHRg",
+                      "name": "dS4Val",
+                      "fill": "$text-primary",
+                      "content": "24",
+                      "lineHeight": 0.85,
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 52,
+                      "fontWeight": "300"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r49np",
+                      "name": "dS4Label",
+                      "fill": "$text-secondary",
+                      "content": "Last Scanned (hrs)",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NK0BN",
+              "name": "Retailer List Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "yMgQ8",
+                  "name": "Section Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Y5Wtp",
+                      "name": "dListLabel",
+                      "fill": "$text-secondary",
+                      "content": "RETAILERS",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "frame",
+                      "id": "9Gugs",
+                      "name": "dScanBtn",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$accent-primary"
+                      },
+                      "gap": 6,
+                      "padding": [
+                        10,
+                        20
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "FfOAd",
+                          "name": "dScanIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "refresh-cw",
+                          "iconFontFamily": "lucide",
+                          "fill": "$accent-primary"
+                        },
+                        {
+                          "type": "text",
+                          "id": "gt3y7",
+                          "name": "dScanText",
+                          "fill": "$accent-primary",
+                          "content": "Run Scan",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tQuxA",
+                  "name": "Card Grid",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Z6rPc",
+                      "name": "Column 1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 20,
+                      "children": [
+                        {
+                          "id": "lCZWT",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc1",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": {
+                                "type": "gradient",
+                                "gradientType": "linear",
+                                "enabled": true,
+                                "rotation": 135,
+                                "size": {
+                                  "height": 1
+                                },
+                                "colors": [
+                                  {
+                                    "color": "$accent-primary",
+                                    "position": 0
+                                  },
+                                  {
+                                    "color": "#8B7845",
+                                    "position": 1
+                                  }
+                                ]
+                              }
+                            },
+                            "7Mjfo": {
+                              "content": "DROP DEAD Extensions"
+                            },
+                            "xKDwA": {
+                              "content": "dropdeadextensions.com"
+                            }
+                          }
+                        },
+                        {
+                          "id": "5SvOI",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc2",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "package",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "ParaHair Canada"
+                            },
+                            "xKDwA": {
+                              "content": "parahair.ca"
+                            }
+                          }
+                        },
+                        {
+                          "id": "g6hBG",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc3",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "sparkles",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "Bombay Hair"
+                            },
+                            "xKDwA": {
+                              "content": "bombayhair.ca"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NxvCN",
+                      "name": "Column 2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 20,
+                      "children": [
+                        {
+                          "id": "YEpTL",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc4",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "shopping-bag",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "Hair Overstock"
+                            },
+                            "xKDwA": {
+                              "content": "hairoverstock.com"
+                            }
+                          }
+                        },
+                        {
+                          "id": "XNQ5q",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc5",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "award",
+                              "fill": "$accent-secondary"
+                            },
+                            "7Mjfo": {
+                              "content": "SuperHairPieces"
+                            },
+                            "xKDwA": {
+                              "content": "superhairpieces.ca"
+                            }
+                          }
+                        },
+                        {
+                          "id": "fN2Q3",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc6",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "tag",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "Market Hair"
+                            },
+                            "xKDwA": {
+                              "content": "markethairextensions.ca"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2GWdL",
+                      "name": "Column 3",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 20,
+                      "children": [
+                        {
+                          "id": "48coW",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc7",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "scissors",
+                              "fill": "$accent-secondary"
+                            },
+                            "7Mjfo": {
+                              "content": "Viola Hair Extensions"
+                            },
+                            "xKDwA": {
+                              "content": "violahairextensions.co"
+                            }
+                          }
+                        },
+                        {
+                          "id": "T8hJw",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc8",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "crown",
+                              "fill": "$accent-secondary"
+                            },
+                            "7Mjfo": {
+                              "content": "Golden Lush Extensions"
+                            },
+                            "xKDwA": {
+                              "content": "goldenlushextensions.com"
+                            }
+                          }
+                        },
+                        {
+                          "id": "qyPQs",
+                          "type": "ref",
+                          "ref": "TrCMm",
+                          "width": "fill_container",
+                          "name": "dc9",
+                          "descendants": {
+                            "4Dp1w": {
+                              "fill": "$bg-elevated"
+                            },
+                            "QhLOg": {
+                              "iconFontName": "gem",
+                              "fill": "$accent-primary"
+                            },
+                            "7Mjfo": {
+                              "content": "Chiquel Hair"
+                            },
+                            "xKDwA": {
+                              "content": "chiquel.ca"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "accent-primary": {
+      "type": "color",
+      "value": "#C9A962"
+    },
+    "accent-secondary": {
+      "type": "color",
+      "value": "#6E9E6E"
+    },
+    "bg-elevated": {
+      "type": "color",
+      "value": "#2A2A2C"
+    },
+    "bg-primary": {
+      "type": "color",
+      "value": "#1A1A1C"
+    },
+    "bg-surface": {
+      "type": "color",
+      "value": "#242426"
+    },
+    "border-divider": {
+      "type": "color",
+      "value": "#2A2A2C"
+    },
+    "border-primary": {
+      "type": "color",
+      "value": "#3A3A3C"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#F5F5F0"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#6E6E70"
+    },
+    "text-tertiary": {
+      "type": "color",
+      "value": "#4A4A4C"
+    }
+  }
+}
